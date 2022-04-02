@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Flickity CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="./assets/css/tailwind.css">
+
+    <!-- Flickity.js -->
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+    <!-- Alpine.js -->
+    <script defer src="https://unpkg.com/alpinejs@3.9.3/dist/cdn.min.js"></script>
+</head>
+
+<body>
+    <!-- Header Section Start -->
+    <section class="bg-cyan-10 relative z-50 border-b-[3px] border-red-10" x-data="{navOpen : false}">
+        <nav class="container mx-auto px-6 py-5 flex flex-col lg:flex-row lg:items-center space-y-8 lg:space-y-0 ">
+            <div class="flex items-center justify-between lg:relative z-10">
+                <a href="#">
+                    <svg class="w-[66px] sm:w-20 md:w-28 lg:w-32 xl:w-[144px]" viewBox="0 0 144 64" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <rect width="144" height="63" rx="31.5" fill="#E81919" />
+                        <path
+                            d="M38.75 43.35c0 1.6-.483 2.817-1.45 3.65-.967.8-2.117 1.2-3.45 1.2-1.3 0-2.433-.4-3.4-1.2-.933-.833-1.4-2.05-1.4-3.65V22.6h-3.4c-1.533 0-2.733-.483-3.6-1.45-.833-.967-1.25-2.117-1.25-3.45 0-1.333.417-2.483 1.25-3.45.867-.967 2.067-1.45 3.6-1.45h16.4c1.533 0 2.733.483 3.6 1.45s1.3 2.117 1.3 3.45c0 1.333-.433 2.483-1.3 3.45-.867.967-2.067 1.45-3.6 1.45h-3.3v20.75ZM54.73 48c-3.232 0-4.85-1.633-4.85-4.9V17.7c0-3.267 1.617-4.9 4.85-4.9h19.4c1.534 0 2.734.483 3.6 1.45.867.933 1.3 2.083 1.3 3.45 0 1.3-.433 2.433-1.3 3.4-.866.967-2.066 1.45-3.6 1.45h-14.6v3h14.6c1.534 0 2.734.483 3.6 1.45.867.933 1.3 2.067 1.3 3.4 0 1.333-.433 2.483-1.3 3.45-.866.933-2.066 1.4-3.6 1.4h-14.6v2.95h14.6c1.534 0 2.734.483 3.6 1.45.867.967 1.3 2.117 1.3 3.45 0 1.367-.433 2.533-1.3 3.5-.866.933-2.066 1.4-3.6 1.4h-19.4Zm39.206-25.35c-.866 0-1.3.433-1.3 1.3V43.1c0 1.8-.383 3.117-1.15 3.95-.733.8-1.95 1.2-3.65 1.2-3.233 0-4.85-1.717-4.85-5.15V15.9c0-2.067 1-3.1 3-3.1h27.6c2.067 0 3.1 1.033 3.1 3.1v27.2c0 3.4-1.616 5.1-4.85 5.1-3.233 0-4.85-1.7-4.85-5.1V23.95c0-.867-.416-1.3-1.25-1.3h-11.8Z"
+                            fill="#fff" />
+                        <path
+                            d="M77.34 57.04h.77c.227 0 .437-.037.63-.11.2-.073.373-.177.52-.31.147-.133.26-.297.34-.49.087-.193.13-.41.13-.65 0-.24-.04-.453-.12-.64a1.349 1.349 0 0 0-.34-.49 1.37 1.37 0 0 0-.52-.31 1.822 1.822 0 0 0-.65-.11h-.76v3.11Zm-1.94-4.1a.91.91 0 0 1 .07-.35c.053-.12.123-.227.21-.32a1.054 1.054 0 0 1 .73-.31h1.54c.58 0 1.1.093 1.56.28.467.187.86.44 1.18.76.327.32.577.693.75 1.12.18.42.27.867.27 1.34 0 .5-.09.963-.27 1.39-.18.42-.43.787-.75 1.1-.32.307-.703.553-1.15.74-.44.18-.92.283-1.44.31h-1.69c-.32 0-.57-.087-.75-.26-.173-.173-.26-.413-.26-.72v-5.08Zm8.678 3.51v1.62c0 .313-.097.553-.29.72a.995.995 0 0 1-.67.25c-.26 0-.487-.08-.68-.24-.193-.167-.29-.41-.29-.73v-5.13c0-.653.323-.98.97-.98h3.88c.307 0 .547.097.72.29.173.187.26.417.26.69 0 .26-.087.487-.26.68-.173.193-.413.29-.72.29h-2.92v.6h2.92c.307 0 .547.097.72.29.173.187.26.413.26.68a.998.998 0 0 1-.26.69c-.173.187-.413.28-.72.28h-2.92Zm10.978 1.58c0 .32-.094.56-.28.72-.187.16-.51.24-.97.24h-3.18c-.72 0-1.264-.187-1.63-.56-.367-.38-.55-.95-.55-1.71v-2.49c0-.76.183-1.327.55-1.7.366-.38.91-.57 1.63-.57h3.26c.393 0 .686.08.88.24.193.16.29.41.29.75 0 .653-.39.98-1.17.98h-3.21a.307.307 0 0 0-.21.07c-.054.04-.08.107-.08.2v2.52c0 .193.096.29.29.29h2.45v-1.37c0-.32.093-.56.28-.72.193-.16.426-.24.7-.24.253 0 .473.08.66.24.193.16.29.4.29.72v2.39Zm7.353 0c0 .32-.093.56-.28.72-.186.16-.51.24-.97.24h-3.18c-.72 0-1.263-.187-1.63-.56-.366-.38-.55-.95-.55-1.71v-2.49c0-.76.184-1.327.55-1.7.367-.38.91-.57 1.63-.57h3.26c.394 0 .687.08.88.24.194.16.29.41.29.75 0 .653-.39.98-1.17.98h-3.21a.307.307 0 0 0-.21.07c-.053.04-.08.107-.08.2v2.52c0 .193.097.29.29.29h2.45v-1.37c0-.32.094-.56.28-.72.194-.16.427-.24.7-.24a.98.98 0 0 1 .66.24c.194.16.29.4.29.72v2.39Zm7.434.04c0 .32-.097.563-.29.73-.194.16-.42.24-.68.24-.267 0-.497-.08-.69-.24-.187-.167-.28-.41-.28-.73v-1.62h-2.76v1.62c0 .32-.097.563-.29.73-.187.16-.414.24-.68.24-.26 0-.487-.08-.68-.24-.194-.167-.29-.41-.29-.73V52.9c0-.32.096-.56.29-.72.193-.167.42-.25.68-.25.266 0 .493.083.68.25.193.16.29.4.29.72v1.61h2.76V52.9c0-.32.093-.56.28-.72a1.02 1.02 0 0 1 .69-.25c.26 0 .486.083.68.25.193.16.29.4.29.72v5.17Zm7.371-.04c0 .32-.093.56-.28.72-.187.16-.51.24-.97.24h-3.18c-.72 0-1.263-.187-1.63-.56-.367-.38-.55-.95-.55-1.71v-2.49c0-.76.183-1.327.55-1.7.367-.38.91-.57 1.63-.57h3.26c.393 0 .687.08.88.24.193.16.29.41.29.75 0 .653-.39.98-1.17.98h-3.21a.306.306 0 0 0-.21.07c-.053.04-.08.107-.08.2v2.52c0 .193.097.29.29.29h2.45v-1.37c0-.32.093-.56.28-.72.193-.16.427-.24.7-.24.253 0 .473.08.66.24.193.16.29.4.29.72v2.39Z"
+                            fill="#425372" />
+                    </svg>
+                </a>
+
+                <button class="lg:hidden" @click="navOpen = !navOpen">
+                    <svg :class="{'hidden' : navOpen}" width="49" height="46" viewBox="0 0 49 46" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke="#fff" stroke-width="2" stroke-linecap="round"
+                            d="M15 27h18M15 27h18M15 17h18M15 17h18M15 22h18M15 22h18" />
+                    </svg>
+
+                    <svg :class="{'hidden' : !navOpen}" width="49" height="46" viewBox="0 0 49 46" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <line x1="16.1233" y1="28.4469" x2="29.9121" y2="16.8767" stroke="white" stroke-width="2"
+                            stroke-linecap="round" />
+                        <line x1="16.1233" y1="28.4469" x2="29.9121" y2="16.8767" stroke="white" stroke-width="2"
+                            stroke-linecap="round" />
+                        <line x1="17.4089" y1="16.877" x2="31.1977" y2="28.4472" stroke="white" stroke-width="2"
+                            stroke-linecap="round" />
+                        <line x1="17.4089" y1="16.877" x2="31.1977" y2="28.4472" stroke="white" stroke-width="2"
+                            stroke-linecap="round" />
+                    </svg>
+
+                </button>
+            </div>
+
+            <div class="absolute inset-x-0 z-0 bg-cyan-10">
+                <ul class="container mx-auto px-6 py-8 lg:py-0 flex-col lg:flex-row lg:justify-center lg:items-center lg:space-x-3 xl:space-x-5"
+                    x-bind:class="navOpen ? 'flex': 'hidden lg:flex'">
+                    <li><a href="#"
+                            class="text-xs sm:text-base md:text-lg xl:text-xl text-white font-bold block p-1.5 lg:p-0 bg-gray-10/30 lg:bg-transparent">HOME</a>
+                    </li>
+                    <li><a href="#"
+                            class="text-xs sm:text-base md:text-lg xl:text-xl text-white font-bold block p-1.5 lg:p-0 hover:bg-gray-10/30">PRICE</a>
+                    </li>
+                    <li><a href="#"
+                            class="text-xs sm:text-base md:text-lg xl:text-xl text-white font-bold block p-1.5 lg:p-0 hover:bg-gray-10/30">IIYUIJUJJY</a>
+                    </li>
+                    <li><a href="#"
+                            class="text-xs sm:text-base md:text-lg xl:text-xl text-white font-bold block p-1.5 lg:p-0 hover:bg-gray-10/30">IYYIIIIIT</a>
+                    </li>
+                    <li><a href="#"
+                            class="text-xs sm:text-base md:text-lg xl:text-xl text-white font-bold block p-1.5 lg:p-0 hover:bg-gray-10/30">YYUIYUII</a>
+                    </li>
+                    <li><a href="#"
+                            class="text-xs sm:text-base md:text-lg xl:text-xl text-white font-bold block p-1.5 lg:p-0 hover:bg-gray-10/30">YYUIYUIYUY</a>
+                    </li>
+                    <li><a href="#"
+                            class="text-xs sm:text-base md:text-lg xl:text-xl text-white font-bold block p-1.5 lg:p-0 hover:bg-gray-10/30">YUIYIYI</a>
+                    </li>
+                    <li><a href="#"
+                            class="text-xs sm:text-base md:text-lg xl:text-xl text-white font-bold block p-1.5 lg:p-0 hover:bg-gray-10/30">YIIYUIIIIIY</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </section>
+    <!-- Header Section End -->
+
+    <!-- Heros Section Start -->
+    <section class="relative w-full h-[240px] sm:h-[340px] md:h-[400px] lg:h-[592px] flex items-center justify-center">
+        <img src="./assets/images/heros-bg.jpg" alt=""
+            class="w-full h-full object-cover object-bottom absolute inset-0 -z-10">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-lg sm:text-2xl md:text-3xl lg:text-[40px] text-white font-extrabold mb-2 sm:mb-4 lg:mb-6">
+                SSJFJDS SJLKSD
+                EWWER <br>
+                FDDFGDFGDD </h1>
+            <p
+                class="text-sm sm:text-lg md:text-xl lg:text-2xl text-white font-extrabold mb-4 sm:mb-6 md:mb-8 lg:mb-10">
+                SGGS EEHEHH EUUERF
+                EUUIIEFIB FEIFIEIF EUIFIIFIF</p>
+
+            <a href="#"
+                class="text-sm sm:text-base md:text-lg lg:text-[22px] text-white font-extrabold bg-green-10 rounded-full px-3 py-1.5 sm:px-8 sm:py-3 lg:py-5 border-2 border-white">Buy
+                Now</a>
+        </div>
+    </section>
+    <!-- Heros Section End -->
+
+
+    <!-- Product Section Start -->
+    <section class="container mx-auto lg:max-w-5xl px-6 py-12 sm:py-16 md:py-24 lg:py-40">
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-red-10 mb-10 sm:mb-12 md:mb-14 lg:mb-16">Contact
+            us</h1>
+
+        <form action="">
+            <div class="mb-7 sm:mb-10 md:mb-12 lg:mb-16">
+                <label for=""
+                    class="text-[22px] sm:text-3xl md:text-4xl lg:text-[50px] mb-2.5 sm:mb-4 md:mb-5 block">Name</label>
+                <input type="text"
+                    class="py-2 px-3 md:py-4 md:px-6 border border-black placeholder-gray-40 rounded w-full"
+                    placeholder="Name">
+            </div>
+            <div class="mb-7 sm:mb-10 md:mb-12 lg:mb-16">
+                <label for=""
+                    class="text-[22px] sm:text-3xl md:text-4xl lg:text-[50px] mb-2.5 sm:mb-4 md:mb-5 block">Email</label>
+                <input type="text"
+                    class="py-2 px-3 md:py-4 md:px-6 border border-black placeholder-gray-40 rounded w-full"
+                    placeholder="Email">
+            </div>
+
+            <div class="mb-5">
+                <label for=""
+                    class="text-[22px] sm:text-3xl md:text-4xl lg:text-[50px] mb-2.5 sm:mb-4 md:mb-5 block">Message</label>
+                <textarea class="py-2 px-3 md:py-4 md:px-6 border border-black placeholder-gray-40 rounded w-full"
+                    rows="6" placeholder="Write your message here..."></textarea>
+            </div>
+
+            <button
+                class="text-sm sm:text-lg md:text-2xl lg:text-[30px] text-white capitalize w-full py-1 sm:py-2 text-center bg-green-10 rounded-lg">Send</button>
+        </form>
+
+    </section>
+    <!-- Product Section End -->
+
+    <!-- Footer Section Start -->
+    <footer class="bg-cyan-10">
+        <div class="container mx-auto px-6 pt-8 sm:pt-12 md:pt-16 lg:pt-20 pb-11 sm:pb-16 md:pb-24 lg:pb-36">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-6 xl:gap-10">
+                <div class="col-span-2 sm:col-span-1">
+                    <h2 class="text-lg sm:text-xl md:text-2xl lg:text-[30px] text-white font-extrabold mb-2 md:mb-4">
+                        About us</h2>
+                    <p class="text-base sm:text-xl md:text-2xl xl:text-[30px] text-white">interdum nulla, quis tempus
+                        ante leout lacus facilugiat. Duis faciique purus vel mauris viverra, eu vestibulum mi volutpat.
+                        Cras ultrices </p>
+                </div>
+
+                <div class="self-center">
+                    <div class="grid grid-cols-2 gap-10 items-end">
+                        <a href="#" class="flex flex-col items-center">
+                            <div class="text-center mb-2">
+                                <img src="./assets/images/telephone.png" alt="" class="w-20">
+                            </div>
+                            <p class="text-xs sm:text-base md:text-xl text-white text-center">Telephone</p>
+                        </a>
+                        <a href="#" class="flex flex-col items-center">
+                            <div class="text-center mb-2">
+                                <img src="./assets/images/ipad.png" alt="" class="w-20">
+                            </div>
+                            <p class="text-xs sm:text-base md:text-xl text-white text-center">Ipad</p>
+                        </a>
+                        <a href="#" class="flex flex-col items-center">
+                            <div class="text-center mb-2">
+                                <img src="./assets/images/aoole-tv-1 - Copy.png" alt="" class="w-20">
+                            </div>
+                            <p class="text-xs sm:text-base md:text-xl text-white text-center">AppleTV
+                            </p>
+                        </a>
+                        <a href="#" class="flex flex-col items-center">
+                            <div class="text-center mb-2">
+                                <img src="./assets/images/airplay-1 - Copy.png" alt="" class="w-20">
+                            </div>
+                            <p class="text-xs sm:text-base md:text-xl text-white text-center">AirPlay
+                            </p>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="self-center">
+                    <div class="grid grid-cols-2 gap-10 items-end">
+                        <a href="#" class="flex flex-col items-center">
+                            <div class="text-center mb-2">
+                                <img src="./assets/images/smart-tv-1.png" alt="" class="w-20">
+                            </div>
+                            <p class="text-xs sm:text-base md:text-xl text-white text-center">Smart TV
+                            </p>
+                        </a>
+                        <a href="#" class="flex flex-col items-center">
+                            <div class="text-center mb-2">
+                                <img src="./assets/images/computer.png" alt="" class="w-20">
+                            </div>
+                            <p class="text-xs sm:text-base md:text-xl text-white text-center">Computer</p>
+                        </a>
+                        <a href="#" class="flex flex-col items-center">
+                            <div class="text-center mb-2">
+                                <img src="./assets/images/stb-1.png" alt="" class="w-20">
+                            </div>
+                            <p class="text-xs sm:text-base md:text-xl text-white text-center">ETC
+                            </p>
+                        </a>
+                        <a href="#" class="flex flex-col items-center">
+                            <div class="text-center mb-2">
+                                <img src="./assets/images/streaming-knit-1.png" alt="" class="w-5">
+                            </div>
+                            <p class="text-xs sm:text-base md:text-xl text-white text-center">Streaming Knit
+
+                            </p>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-span-2 sm:col-span-1">
+                    <h2 class="text-lg sm:text-xl md:text-2xl lg:text-[30px] text-white font-extrabold mb-4 md:mb-14">
+                        Contact us
+                    </h2>
+                    <div class="flex items-center space-x-3 xl:space-x-8 mb-10">
+                        <svg class="min-w-[24px] w-6" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M3.87868 5.87868C3 6.75736 3 8.17157 3 11V13C3 15.8284 3 17.2426 3.87868 18.1213C4.75736 19 6.17157 19 9 19H15C17.8284 19 19.2426 19 20.1213 18.1213C21 17.2426 21 15.8284 21 13V11C21 8.17157 21 6.75736 20.1213 5.87868C19.2426 5 17.8284 5 15 5H9C6.17157 5 4.75736 5 3.87868 5.87868ZM6.5547 8.16795C6.09517 7.8616 5.4743 7.98577 5.16795 8.4453C4.8616 8.90483 4.98577 9.5257 5.4453 9.83205L10.8906 13.4622C11.5624 13.9101 12.4376 13.9101 13.1094 13.4622L18.5547 9.83205C19.0142 9.5257 19.1384 8.90483 18.8321 8.4453C18.5257 7.98577 17.9048 7.8616 17.4453 8.16795L12 11.7982L6.5547 8.16795Z"
+                                fill="white" />
+                        </svg>
+
+                        <p class="text-sm sm:text-lg md:text-xl lg:text-2xl text-white">support@rfgd.com</p>
+                    </div>
+
+                    <div class="flex items-center space-x-3 xl:space-x-8 mb-10">
+                        <svg class="min-w-[24px] w-6" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M12 3a9 9 0 0 0 0 18h4.5c1.398 0 2.097 0 2.648-.228a3 3 0 0 0 1.624-1.624C21 18.597 21 17.898 21 16.5V12a9 9 0 0 0-9-9Zm-4 8a1 1 0 0 1 1-1h6a1 1 0 1 1 0 2H9a1 1 0 0 1-1-1Zm3 4a1 1 0 0 1 1-1h3a1 1 0 1 1 0 2h-3a1 1 0 0 1-1-1Z"
+                                fill="#fff" />
+                        </svg>
+
+                        <p class="text-sm sm:text-lg md:text-xl lg:text-2xl text-white">idghhhfg@gmail.com</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="border-t border-gray-10">
+            <div class="container mx-auto px-6 text-center py-6">
+                <p class="text-xs sm:text-sm font-light text-white">Copyright 2020 © All rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+</body>
+
+</html>
