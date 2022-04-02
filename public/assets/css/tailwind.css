@@ -425,6 +425,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: none;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 body{
   font-family: Roboto, sans-serif;
 }
@@ -589,12 +593,12 @@ body{
   margin-bottom: 3rem;
 }
 
-.mb-2\.5{
-  margin-bottom: 0.625rem;
-}
-
 .mb-7{
   margin-bottom: 1.75rem;
+}
+
+.mb-2\.5{
+  margin-bottom: 0.625rem;
 }
 
 .block{
