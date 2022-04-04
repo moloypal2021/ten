@@ -21,7 +21,7 @@
 
 <body>
     <!-- Header Section Start -->
-    <section class="bg-cyan-10 relative z-50 border-b-[3px] border-red-10" x-data="{navOpen : false}">
+    <section class="fixed top-0 inset-x-0 bg-cyan-10 z-50 border-b-[3px] border-red-10" x-data="{navOpen : false}">
         <nav class="container mx-auto px-6 py-5 flex flex-col lg:flex-row lg:items-center space-y-8 lg:space-y-0 ">
             <div class="flex items-center justify-between lg:relative z-10">
                 <a href="#">
@@ -93,7 +93,8 @@
     <!-- Header Section End -->
 
     <!-- Heros Section Start -->
-    <section class="relative w-full h-[240px] sm:h-[340px] md:h-[400px] lg:h-[592px] flex items-center justify-center">
+    <section
+        class="relative w-full h-[240px] sm:h-[340px] md:h-[400px] lg:h-[592px] mt-20 flex items-center justify-center">
         <img src="./assets/images/heros-bg.jpg" alt=""
             class="w-full h-full object-cover object-bottom absolute inset-0 -z-10">
         <div class="container mx-auto px-6 text-center">
